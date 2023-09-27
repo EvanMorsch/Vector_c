@@ -5,7 +5,7 @@
 #ifndef vec2_h
 #define vec2_h
  
-#include <stdlib>
+#include <stdlib.h>
 
 /*
  *  @brief The stucture of a 2 dimensional vector.
