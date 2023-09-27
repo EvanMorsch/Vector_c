@@ -23,6 +23,7 @@ void Vector2D_Destroy(Vector2D_t* desVec)
 void Vector2D_Set(Vector2D_t* setVec, double x, double y)
 {
 	if (NULL != setVec)
+	{
 		setVec->x = x;
 		setVec->y = y;
 	}
@@ -37,4 +38,17 @@ Vector2D_t* Vector2D_Copy(Vector2D_t* cpVec)
 	newVec = malloc(sizeof(Vector2D_t));
 	if (NULL != newVec) Vector2D_Set(newVec, x, y);
 	return newVec;
+}
+
+//edits vec1
+void Vector2D_Add(Vector2D_t* vec1, Vector2D_t* vec2)
+{
+	if (NULL == vec1 || NULL == vec2) return;
+	Vector2D_Set(vec1, vec1->x+vec2->x, vec1->y+vec2->y);
+}
+//edits vec1
+void Vector2D_Subtract(Vector2D_t* vec1, Vector2D_t* vec2)
+{
+	if (NULL == vec1 || NULL == vec2) return;
+	Vector2D_Set(vec1, vec1->x-vec2->x, vec1->y-vec2->y);
 }
