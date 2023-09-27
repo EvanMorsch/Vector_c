@@ -52,3 +52,16 @@ void Vector2D_Subtract(Vector2D_t* vec1, Vector2D_t* vec2)
 	if (NULL == vec1 || NULL == vec2) return;
 	Vector2D_Set(vec1, vec1->x-vec2->x, vec1->y-vec2->y);
 }
+
+//edits vec1
+void Vector2D_Multiply(Vector2D_t* vec1, Vector2D_t* vec2)
+{
+	if (NULL == vec1 || NULL == vec2) return;
+	Vector2D_Set(vec1, vec1->x*vec2->x, vec1->y*vec2->y);
+}
+//edits vec1
+void Vector2D_Divide(Vector2D_t* vec1, Vector2D_t* vec2)
+{
+	if (NULL == vec1 || NULL == vec2) return;
+	Vector2D_Set(vec1, vec1->x/vec2->x, vec1->y/vec2->y);
+}
