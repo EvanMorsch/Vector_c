@@ -16,20 +16,35 @@ struct Vector2D_t
 
 Vector2D_t* Vector2D_Create(double x, double y)
 {
-	Vector2D_t* new_vec = NULL;
+	Vector2D_t* newVec = NULL;
 
-	new_vec = malloc(sizeof(Vector2D_t));
-	if (NULL != new_vec)
-	{
-		new_vec->x = x;
-		new_vec->y = y;
+	newVec = malloc(sizeof(Vector2D_t));
+	if (NULL != newVec) Vector2D_Set(newVec, x, y);
+	return newVec;
+}
+
+void Vector2D_Set(Vector2D_t* setVec, double x, double y)
+{
+	if (NULL != setVec)
+		setVec->x = x;
+		setVec->y = y;
 	}
-	return new_vec;
+}
+
+Vector2D_t* Vector2D_Copy(Vector2D_t* cpVec)
+{
+	Vector2D_t* newVec = NULL;
+
+	if (NULL == cpVec) return NULL;
+
+	newVec = malloc(sizeof(Vector2D_t));
+	if (NULL != newVec) Vector2D_Set(newVec, x, y);
+	return newVec;
 }
 
 void Vector2D_Destroy(Vector2D_t* desVec)
 {
-	if (NULL != new_vec)
+	if (NULL != newVec)
 	{
 		free(desVec);
 	}
