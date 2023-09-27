@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.25.1)
-project(list)
+project(vector)
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wpedantic -Wextra")
 
 include_directories(".")
 
-add_library(${PROJECT_NAME} vec2.c)
+add_library(vec2 vec2.c)
