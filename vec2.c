@@ -42,16 +42,18 @@ Vector2D_t* Vector2D_Copy(Vector2D_t* cpVec)
 }
 
 //edits vec1
+//shorthand for create_new_from_sum:
+//	`vec3 = Vector2D_Add(Vector2D_Copy(vec1), vec2)`
 Vector2D_t* Vector2D_Add(Vector2D_t* vec1, Vector2D_t* vec2)
 {
-	if (NULL == vec1 || NULL == vec2) return;
+	if (NULL == vec1 || NULL == vec2) return NULL;
 	Vector2D_Set(vec1, vec1->x+vec2->x, vec1->y+vec2->y);
 	return vec1;
 }
 //edits vec1
 Vector2D_t* Vector2D_Subtract(Vector2D_t* vec1, Vector2D_t* vec2)
 {
-	if (NULL == vec1 || NULL == vec2) return;
+	if (NULL == vec1 || NULL == vec2) return NULL;
 	Vector2D_Set(vec1, vec1->x-vec2->x, vec1->y-vec2->y);
 	return vec1;
 }
@@ -59,14 +61,23 @@ Vector2D_t* Vector2D_Subtract(Vector2D_t* vec1, Vector2D_t* vec2)
 //edits vec1
 Vector2D_t* Vector2D_Multiply(Vector2D_t* vec1, Vector2D_t* vec2)
 {
-	if (NULL == vec1 || NULL == vec2) return;
+	if (NULL == vec1 || NULL == vec2) return NULL;
 	Vector2D_Set(vec1, vec1->x*vec2->x, vec1->y*vec2->y);
 	return vec1;
 }
 //edits vec1
 Vector2D_t* Vector2D_Divide(Vector2D_t* vec1, Vector2D_t* vec2)
 {
-	if (NULL == vec1 || NULL == vec2) return;
+	if (NULL == vec1 || NULL == vec2) return NULL;
+	if (0 == vec2->x || 0 == vec2->y) return NULL;
 	Vector2D_Set(vec1, vec1->x/vec2->x, vec1->y/vec2->y);
+	return vec1;
+}
+
+//edits vec1
+Vector2D_t* Vector2D_Scale(Vector2D_t* vec1, double scaler)
+{
+	if (NULL == vec1 || NULL == vec2) return;
+	Vector2D_Set(vec1, vec1->x*scaler, vec1->y*scaler);
 	return vec1;
 }

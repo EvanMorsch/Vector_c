@@ -24,4 +24,13 @@ void Vector2D_Set(Vector2D_t*, double, double);
 
 Vector2D_t* Vector2D_Copy(Vector2D_t* );
 
+//edits vec1
+//shorthand for create_new_from_sum:
+//	`vec3 = Vector2D_Add(Vector2D_Copy(vec1), vec2)`
+Vector2D_t* Vector2D_Add(Vector2D_t*, Vector2D_t*);
+Vector2D_t* Vector2D_Subtract(Vector2D_t*, Vector2D_t*);
+Vector2D_t* Vector2D_Multiply(Vector2D_t*, Vector2D_t*);
+Vector2D_t* Vector2D_Divide(Vector2D_t*, Vector2D_t*);
+Vector2D_t* Vector2D_Scale(Vector2D_t*, double);
+
 #endif
