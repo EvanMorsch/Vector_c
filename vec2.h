@@ -24,5 +24,6 @@ Vector2D_t Vector2D_Subtract(Vector2D_t, Vector2D_t);
 Vector2D_t Vector2D_Multiply(Vector2D_t, Vector2D_t);
 Vector2D_t Vector2D_Divide(Vector2D_t, Vector2D_t);
 Vector2D_t Vector2D_Scale(Vector2D_t, double);
+double Vector2D_Distance(Vector2D_t, Vector2D_t);
 
 #endif
